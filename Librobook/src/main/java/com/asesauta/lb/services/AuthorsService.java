@@ -9,6 +9,7 @@ import com.asesauta.lb.dao.AuthorDao;
 import com.asesauta.lb.data.Author;
 
 @Service(value="authorsService")
+@Transactional
 public class AuthorsService {
 	
 	@Resource
@@ -18,7 +19,6 @@ public class AuthorsService {
 		this.authorDao = authorDao;
 	}
 
-	@Transactional
 	public Author getAuthor(Integer id) {
 		return authorDao.getAuthor(id);
 	}

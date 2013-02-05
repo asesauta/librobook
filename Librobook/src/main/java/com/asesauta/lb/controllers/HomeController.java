@@ -1,4 +1,4 @@
-package com.asesauta.lb;
+package com.asesauta.lb.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -38,7 +38,7 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-		svc.getAuthor(1);
+		System.out.println(svc.getAuthor(1).getName());
 		
 		model.addAttribute("serverTime", formattedDate );
 		
