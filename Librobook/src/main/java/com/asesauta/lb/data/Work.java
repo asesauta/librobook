@@ -1,8 +1,11 @@
 package com.asesauta.lb.data;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +18,9 @@ public class Work {
 	private String title;
 	private String lang;
 	private String originalLang;
-	private Author author;
+	
+	@ManyToMany
+	private Set<Author> authors;
 	
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }
@@ -25,6 +30,6 @@ public class Work {
 	public void setLang(String lang) { this.lang = lang; }
 	public String getOriginalLang() { return originalLang; }
 	public void setOriginalLang(String originalLang) { this.originalLang = originalLang; }
-	public Author getAuthor() { return author; }
-	public void setAuthor(Author author) { this.author = author; }
+	public Set<Author> getAuthors() { return authors; }
+	public void setAuthors(Set<Author> authors) { this.authors = authors; }
 }

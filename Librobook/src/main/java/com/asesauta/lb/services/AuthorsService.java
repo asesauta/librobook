@@ -1,5 +1,7 @@
 package com.asesauta.lb.services;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -21,5 +23,9 @@ public class AuthorsService {
 
 	public Author getAuthor(Integer id) {
 		return authorDao.getAuthor(id);
+	}
+	
+	public List<Author> getAllAuthors() {
+		return authorDao.getAllAuthors();
 	}
 }
